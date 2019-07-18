@@ -9,13 +9,16 @@
         <span class="font-semibold text-xl tracking-tight">Company</span>
       </div>
       <div class="block lg:hidden">
-        <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+        <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white" @click="navbarToggle1">
           <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <title>Menu</title>
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
         </button>
       </div>
-      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div :class="{
+      'w-full block flex-grow lg:flex lg:items-center lg:w-auto': this.navbarCollapsed1 === false,
+      'w-full block flex-grow lg:flex lg:items-center lg:w-auto hidden': this.navbarCollapsed1 === true
+      }">
         <div class="text-sm lg:flex-grow">
           <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
             Menu1
@@ -54,13 +57,16 @@
         <span class="font-semibold text-xl tracking-tight">Company</span>
       </div>
       <div class="block lg:hidden">
-        <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+        <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white" @click="navbarToggle2">
           <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <title>Menu</title>
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
         </button>
       </div>
-      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div :class="{
+      'w-full block flex-grow lg:flex lg:items-center lg:w-auto': this.navbarCollapsed2 === false,
+      'w-full block flex-grow lg:flex lg:items-center lg:w-auto hidden': this.navbarCollapsed2 === true
+      }">
         <div class="text-sm lg:w-full lg:flex lg:justify-around">
           <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
             Menu1
@@ -94,24 +100,27 @@
         <span class="font-semibold text-xl tracking-tight">Company</span>
       </div>
       <div class="block lg:hidden">
-        <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+        <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white mr-6" @click="navbarToggle3">
           <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <title>Menu</title>
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
         </button>
       </div>
-      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div :class="{
+      'w-full block flex-grow lg:flex lg:items-center lg:w-auto': this.navbarCollapsed3 === false,
+      'w-full block flex-grow lg:flex lg:items-center lg:w-auto hidden': this.navbarCollapsed3 === true
+      }">
         <div class="text-sm lg:w-full lg:flex lg:justify-start items-center h-20">
           <a href="#responsive-header" class="bg-indigo-600 text-white h-20 flex items-center px-8">
             Menu1
           </a>
-          <a href="#responsive-header" class="text-white h-20 flex items-center px-8 hover:bg-indigo-600">
+          <a href="#responsive-header" class="text-white h-20 flex items-center px-8 hover:bg-indigo-600 bg-teal-500">
             Menu2
           </a>
-          <a href="#responsive-header" class="text-white h-20 flex items-center px-8 hover:bg-indigo-600">
+          <a href="#responsive-header" class="text-white h-20 flex items-center px-8 hover:bg-indigo-600 bg-teal-500">
             Menu3
           </a>
-          <a href="#responsive-header" class="text-white h-20 flex items-center px-8 hover:bg-indigo-600">
+          <a href="#responsive-header" class="text-white h-20 flex items-center px-8 hover:bg-indigo-600 bg-teal-500">
             Menu4
           </a>
         </div>
@@ -120,3 +129,27 @@
 
   </div>
 </template>
+
+<script>
+export default {
+  name: 'Navbar',
+  data() {
+    return {
+      navbarCollapsed1: true,
+      navbarCollapsed2: true,
+      navbarCollapsed3: true,
+    };
+  },
+  methods: {
+    navbarToggle1() {
+      this.navbarCollapsed1 = !this.navbarCollapsed1;
+    },
+    navbarToggle2() {
+      this.navbarCollapsed2 = !this.navbarCollapsed2;
+    },
+    navbarToggle3() {
+      this.navbarCollapsed3 = !this.navbarCollapsed3;
+    },
+  },
+};
+</script>
