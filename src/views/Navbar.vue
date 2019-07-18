@@ -102,7 +102,7 @@
       </div>
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:w-full lg:flex lg:justify-start items-center h-20">
-          <a href="#responsive-header" class="bg-white h-20 flex items-center px-8">
+          <a href="#responsive-header" class="bg-indigo-600 text-white h-20 flex items-center px-8">
             Menu1
           </a>
           <a href="#responsive-header" class="text-white h-20 flex items-center px-8 hover:bg-indigo-600">
